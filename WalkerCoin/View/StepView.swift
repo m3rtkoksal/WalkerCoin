@@ -10,7 +10,7 @@ import HealthKit
 
 struct StepView: View {
     private var healthStore: HealthStore?
-    @State private var selectedDay = Step(count: 0, date: Date(), wc: 0)
+    @State private var selectedDay = Step(count: 0, date: Date())
     @State private var steps: [Step] = [Step]()
     init() {
         healthStore = HealthStore()
@@ -21,7 +21,7 @@ struct StepView: View {
         let startDate = Calendar.current.date(byAdding: .day, value: -14, to: Date())!
         statisticsCollection.enumerateStatistics(from: startDate, to: now) { (statistics, stop) in
             let count = statistics.sumQuantity()?.doubleValue(for: .count())
-            let step = Step(count: Int(count ?? 0), date: statistics.startDate, wc: Double(count ?? 0 / 1000 ))
+            let step = Step(count: Int(count ?? 0), date: statistics.startDate)
             steps.append(step)
         }
     }

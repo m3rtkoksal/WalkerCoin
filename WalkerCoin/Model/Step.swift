@@ -11,6 +11,5 @@ struct Step: Identifiable {
     let id = UUID()
     let count: Int
     let date: Date
-    let wc: Double
     
 }

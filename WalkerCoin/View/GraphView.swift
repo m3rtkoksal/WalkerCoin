@@ -62,11 +62,11 @@ struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
         
         let steps = [
-            Step(count: 3452, date: Date(), wc: 10),
-            Step(count: 123, date: Date(), wc: 20),
-            Step(count: 1223, date: Date(), wc: 30),
-            Step(count: 5223, date: Date(), wc: 40),
-            Step(count: 12023, date: Date(), wc: 50)
+            Step(count: 3452, date: Date()),
+            Step(count: 123, date: Date()),
+            Step(count: 1223, date: Date()),
+            Step(count: 5223, date: Date()),
+            Step(count: 12023, date: Date())
                ]
         
         GraphView(steps: steps)
